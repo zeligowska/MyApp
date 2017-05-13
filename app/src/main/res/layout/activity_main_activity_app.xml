@@ -19,17 +19,17 @@
         android:id="@+id/button1" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:text="przycisk1"
-        android:id="@+id/button2" />
+        android:text="przycisk2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:text="przycisk1"
+        android:text="przycisk3"
         android:id="@+id/button3" />
 
     <TableLayout
@@ -40,11 +40,24 @@
             android:text="First Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:id="@+id/firstName"/>
         <EditText
             android:width="200px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Last Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:id="@+id/lastName"/>
+            <EditText
+                android:width="200px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

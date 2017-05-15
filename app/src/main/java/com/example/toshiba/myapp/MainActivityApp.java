@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import static com.example.toshiba.myapp.R.id.firstName;
@@ -45,7 +46,9 @@ public class MainActivityApp extends Activity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 TextView textView = (TextView) findViewById(R.id.textView2);
-                textView.setText("dsvcvxvx");
+                EditText firstName = (EditText) findViewById(R.id.firstName);
+                EditText lastName = (EditText) findViewById(R.id.lastName);
+                textView.setText(firstName.getText() + " " + lastName.getText());
             }
         });
 

@@ -1,6 +1,8 @@
 package com.example.toshiba.myapp;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +51,10 @@ public class MainActivityApp extends Activity {
                 EditText firstName = (EditText) findViewById(R.id.firstName);
                 EditText lastName = (EditText) findViewById(R.id.lastName);
                 textView.setText(firstName.getText() + " " + lastName.getText());
+                Context context;
+                context = getApplicationContext();
+                Intent intent = new Intent(context, Obrazek.class);
+                startActivity(intent);
             }
         });
 

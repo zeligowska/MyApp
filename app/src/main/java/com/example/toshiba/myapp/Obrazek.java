@@ -16,18 +16,34 @@ public class Obrazek extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.obrazek);
-        Context context;
-        context = getApplicationContext();
-        Intent intent = new Intent(context, Obrazek.class);
-        startActivity(intent);
+
 
         Button button4 = (Button) findViewById(R.id.button4);
+        Button button5 = (Button) findViewById(R.id.button5);
+        Button button6 = (Button) findViewById(R.id.button6);
 
 
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ImageView imageView = (ImageView) findViewById(R.id.imageView);
                 imageView.setImageResource(R.drawable.android2);
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Context context1;
+                context1 = getApplicationContext();
+                Intent intent1 = new Intent(context1, MainActivityApp.class);
+                startActivity(intent1);
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ImageView imageView = (ImageView) findViewById(R.id.imageView);
+                imageView.setImageResource(R.drawable.android);
             }
         });
 

@@ -9,19 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static com.example.toshiba.myapp.R.id.firstName;
-import static com.example.toshiba.myapp.R.id.lastName;
-
 public class MainActivityApp extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity_app);
+        final Context context;
+        context = getApplicationContext();
 
         Button button1 = (Button) findViewById(R.id.button1);
         Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
         Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
+        Button buttonPhones = (Button) findViewById(R.id.buttonPhones);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +51,15 @@ public class MainActivityApp extends Activity {
                 EditText firstName = (EditText) findViewById(R.id.firstName);
                 EditText lastName = (EditText) findViewById(R.id.lastName);
                 textView.setText(firstName.getText() + " " + lastName.getText());
-                Context context;
-                context = getApplicationContext();
                 Intent intent = new Intent(context, Obrazek.class);
                 startActivity(intent);
+            }
+        });
+
+        buttonPhones.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent1 = new Intent(context, Phones.class);
+                startActivity(intent1);
             }
         });
 

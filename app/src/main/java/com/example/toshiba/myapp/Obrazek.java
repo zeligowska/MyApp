@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import static com.example.toshiba.myapp.R.id.imageView;
-
 public class Obrazek extends Activity {
 
     @Override
@@ -33,10 +31,10 @@ public class Obrazek extends Activity {
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Context context1;
-                context1 = getApplicationContext();
-                Intent intent1 = new Intent(context1, MainActivityApp.class);
-                startActivity(intent1);
+                Context context;
+                context = getApplicationContext();
+                Intent intent = new Intent(context, MainActivityApp.class);
+                startActivity(intent);
             }
         });
 

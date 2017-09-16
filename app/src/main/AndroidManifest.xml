@@ -17,8 +17,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Obrazek">
-        </activity>
+        <activity android:name=".Obrazek" />
+
+        <activity android:name=".Phones" />
+
+        <activity android:name=".IPhoneX" />
+
+        <activity android:name=".IPhone8" />
+
+        <activity android:name=".SamsungS8" />
 
     </application>
 

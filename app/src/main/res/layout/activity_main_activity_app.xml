@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F6E3CE">
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
         <TableRow>
         <TextView
             android:text="First Name"
@@ -91,6 +93,28 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Phones" />
+
+    <Button
+        android:id="@+id/playSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play sound"
+        android:onClick="playSound"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/stopSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Stop sound"
+        android:onClick="stopSound"
+        android:textColor="@color/colorPrimary"
+        />
+
+
     <Button
         android:id="@+id/btnNewAlertDialogButton"
         android:layout_width="wrap_content"
@@ -98,5 +122,6 @@
         android:layout_gravity="center"
         android:text="Exit"
         />
+
 </LinearLayout>
 

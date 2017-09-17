@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 import com.example.toshiba.myapp.phones.Phones;
 
 public class MainActivityApp extends Activity {
+
+    private MediaPlayer mediaPlayer;
 
     private Dialog createAlertDialogWithButtons() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -39,11 +42,21 @@ public class MainActivityApp extends Activity {
         return dialogBuilder.create();
     }
 
-
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(),
                 message,
                 Toast.LENGTH_LONG).show();
+    }
+
+    public void playSound(View view){
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+        }
+        mediaPlayer = MediaPlayer.create(this, R.raw.bluethroat);
+        mediaPlayer.start();
+    }
+    public void stopSound(View view){
+        mediaPlayer.stop();
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.toshiba.myapp;
+package com.example.toshiba.myapp.phones;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,8 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.toshiba.myapp.MainActivityApp;
+import com.example.toshiba.myapp.R;
 
 public class Phones extends Activity {
     private ListView lv;

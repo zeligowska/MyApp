@@ -1,4 +1,4 @@
-package com.example.toshiba.myapp;
+package com.example.toshiba.myapp.phones;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,15 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * Created by TOSHIBA on 16.09.2017.
- */
+import com.example.toshiba.myapp.R;
 
-public class SamsungS8 extends AppCompatActivity {
+
+public class IPhone8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.samsung_s8);
+        setContentView(R.layout.iphone_8);
 
         Button buttonBack = (Button) findViewById(R.id.buttonBack);
 

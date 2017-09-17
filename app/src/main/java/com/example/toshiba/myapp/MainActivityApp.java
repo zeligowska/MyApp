@@ -1,15 +1,52 @@
 package com.example.toshiba.myapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.toshiba.myapp.phones.Phones;
 
 public class MainActivityApp extends Activity {
+
+    private Dialog createAlertDialogWithButtons() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Wyjście");
+        dialogBuilder.setMessage("Czy napewno?");
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setPositiveButton("Tak", new Dialog.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int whichButton) {
+                showToast("Wychodzę");
+                MainActivityApp.this.finish();
+            }
+        });
+        dialogBuilder.setNegativeButton("Nie", new Dialog.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int whichButton) {
+                showToast("Anulowaleś wyjście");
+
+            }
+        });
+        return dialogBuilder.create();
+    }
+
+
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(),
+                message,
+                Toast.LENGTH_LONG).show();
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +59,7 @@ public class MainActivityApp extends Activity {
         Button button3 = (Button) findViewById(R.id.button3);
         Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
         Button buttonPhones = (Button) findViewById(R.id.buttonPhones);
+        Button btnNewAlertDialogButton = (Button) findViewById(R.id.btnNewAlertDialogButton);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -63,8 +101,13 @@ public class MainActivityApp extends Activity {
             }
         });
 
+
+        btnNewAlertDialogButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                createAlertDialogWithButtons().show();
+            }
+        });
+
     }
-
-
 
 }

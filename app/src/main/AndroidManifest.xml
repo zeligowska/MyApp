@@ -19,13 +19,13 @@
 
         <activity android:name=".Obrazek" />
 
-        <activity android:name=".Phones" />
+        <activity android:name=".phones.Phones" />
 
-        <activity android:name=".IPhoneX" />
+        <activity android:name=".phones.IPhoneX" />
 
-        <activity android:name=".IPhone8" />
+        <activity android:name=".phones.IPhone8" />
 
-        <activity android:name=".SamsungS8" />
+        <activity android:name=".phones.SamsungS8" />
 
     </application>
 

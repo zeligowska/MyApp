@@ -29,7 +29,9 @@ public class MainActivityApp extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 showToast("Wychodzę");
-                MainActivityApp.this.finish();
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
             }
         });
         dialogBuilder.setNegativeButton("Nie", new Dialog.OnClickListener() {

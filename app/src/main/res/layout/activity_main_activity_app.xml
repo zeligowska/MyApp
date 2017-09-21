@@ -95,23 +95,11 @@
         android:text="Phones" />
 
     <Button
-        android:id="@+id/playSound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play sound"
-        android:onClick="playSound"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="center"
-        />
-
-    <Button
-        android:id="@+id/stopSound"
+        android:id="@+id/btnNewAlertDialogWithList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Stop sound"
-        android:onClick="stopSound"
-        android:textColor="@color/colorPrimary"
+        android:text="Sound"
         />
 
     <Button
@@ -121,6 +109,13 @@
         android:layout_gravity="center"
         android:text="Photo"
         />
+
+    <Button
+        android:id="@+id/buttonSenors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Compass" />
 
     <Button
         android:id="@+id/btnNewAlertDialogButton"

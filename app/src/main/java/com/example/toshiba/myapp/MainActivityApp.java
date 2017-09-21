@@ -6,6 +6,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -55,6 +58,24 @@ public class MainActivityApp extends Activity {
         return dialogBuilder.create();
     }
 
+    private Dialog createAlertDialogWithList(final View view) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        final String[] options = {"Start Bluethroat", "Stop Bluethroat"};
+        dialogBuilder.setTitle("Wybierz dźwięk");
+        dialogBuilder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int position) {
+                if(position == 0) {
+                    playSound(view);
+                }
+                else {
+                    stopSound(view);
+                }
+            }
+        });
+        return dialogBuilder.create();
+    }
+
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(),
                 message,
@@ -82,9 +103,7 @@ public class MainActivityApp extends Activity {
         Uri uriSavedImage = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
-
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +118,9 @@ public class MainActivityApp extends Activity {
         Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
         Button buttonPhones = (Button) findViewById(R.id.buttonPhones);
         Button btnNewAlertDialogButton = (Button) findViewById(R.id.btnNewAlertDialogButton);
+        Button btnNewAlertDialogWithList = (Button) findViewById(R.id.btnNewAlertDialogWithList);
         Button photoButton = (Button) findViewById(R.id.photoButton);
+        Button buttonSenors = (Button) findViewById(R.id.buttonSenors);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +155,13 @@ public class MainActivityApp extends Activity {
             }
         });
 
+        buttonSenors.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Sensors.class);
+                startActivity(intent);
+            }
+        });
+
         buttonPhones.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent1 = new Intent(context, Phones.class);
@@ -145,6 +173,12 @@ public class MainActivityApp extends Activity {
         btnNewAlertDialogButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 createAlertDialogWithButtons().show();
+            }
+        });
+
+        btnNewAlertDialogWithList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                createAlertDialogWithList(v).show();
             }
         });
 

@@ -16,6 +16,8 @@ public class Sensors extends Activity implements SensorEventListener {
     private float currentDegree = 0f;
     private SensorManager sensorManager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
